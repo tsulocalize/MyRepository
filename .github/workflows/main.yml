@@ -28,5 +28,5 @@ jobs:
       - name: Docker build
         run: |
           docker build -t spring-cicd . 
-          docker tag spring-cicd {tsulocalizing}/spring-cicd:${GITHUB_SHA::7}
-          docker push {tsulocalizing}/spring-cicd:${GITHUB_SHA::7}
+          docker tag spring-cicd tsulocalizing/spring-cicd:${GITHUB_SHA::7}
+          docker push tsulocalizing/spring-cicd:${GITHUB_SHA::7}
