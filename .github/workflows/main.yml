@@ -38,12 +38,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
       - name: Start Session Manager session
-        run: aws ssm start-session --target { be-student-14-tsulocalize }
+        run: aws ssm start-session --target be-student-14-tsulocalize
       - name: Deploy to Server
         env:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-2
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ap-northeast-2
         run: |
           aws ssm send-command \
             --instance-ids be-student-14-tsulocalize \
